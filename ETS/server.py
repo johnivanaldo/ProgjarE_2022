@@ -3,7 +3,7 @@ import logging
 import json
 
 alldata = dict()
-alldata['1'] = dict(nomor=1, nama="Ederson", posisi="kiper")
+alldata['1'] = dict(nomor=1, nama="Dean Henderson", posisi="kiper")
 alldata['2'] = dict(nomor=2, nama="Walker", posisi="bek kiri")
 alldata['3'] = dict(nomor=3, nama="Stones", posisi="bek tengah kiri")
 alldata['4'] = dict(nomor=4, nama="Laporte", posisi="bek tengah kanan")
