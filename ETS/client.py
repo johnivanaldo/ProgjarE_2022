@@ -68,11 +68,11 @@ class Request:
 
 
 def send_random_request(secure):
-    id_pemain = random.randint(1, 10)
+    id = random.randint(1, 10)
     request = Request(
         ip='172.16.16.101',
         port=10000,
-        data=f"getdatapemain {id_pemain}\r\n\r\n",
+        data=f"getdatapemain {id}\r\n\r\n",
         secure=secure
     )
     return request
@@ -90,7 +90,7 @@ try:
 
     requests = dict()
 
-    catat_awal = datetime.datetime.now()
+    awal = datetime.datetime.now()
 
     for thread in range(thread_count):
         requests[thread] = send_random_request(secure)
@@ -103,13 +103,13 @@ try:
         if(requests[thread].response_success):
             response_count += 1
 
-    catat_akhir = datetime.datetime.now()
-    selesai = catat_akhir - catat_awal
+    akhir = datetime.datetime.now()
+    s = akhir - awal
 
     print(f"jumlah request: {thread_count}")
     print(f"jumlah response: {response_count}")
 
-    print(f"client selesai dengan {selesai} ms")
+    print(f"selesai dengan {s} ms")
 
 except Exception as ee:
     logging.info(f"ERROR: {str(ee)}")
