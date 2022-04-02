@@ -6,14 +6,16 @@ import ssl
 import threading
 
 alldata = dict()
-alldata['1'] = dict(nomor=1, nama="dean henderson", posisi="kiper")
-alldata['2'] = dict(nomor=2, nama="luke shaw", posisi="bek kiri")
-alldata['3'] = dict(nomor=3, nama="aaron wan-bissaka", posisi="bek kanan")
-alldata['4'] = dict(nomor=4, nama="victor lindelof", posisi="bek tengah kanan")
-alldata['5'] = dict(nomor=5, nama="pemain 5", posisi="pos 5")
-alldata['6'] = dict(nomor=6, nama="pemain 6", posisi="pos 6")
-alldata['7'] = dict(nomor=7, nama="pemain 7", posisi="pos 7")
-alldata['8'] = dict(nomor=8, nama="pemain 8", posisi="pos 8")
+alldata['1'] = dict(nomor=1, nama="Ederson", posisi="kiper")
+alldata['2'] = dict(nomor=2, nama="Walker", posisi="bek kiri")
+alldata['3'] = dict(nomor=3, nama="Stones", posisi="bek tengah kiri")
+alldata['4'] = dict(nomor=4, nama="Laporte", posisi="bek tengah kanan")
+alldata['5'] = dict(nomor=5, nama="Cancelo", posisi="bek kanan")
+alldata['6'] = dict(nomor=6, nama="De Bruyne", posisi="gelandang serang tengah")
+alldata['7'] = dict(nomor=7, nama="Sterling", posisi="sayap kiri")
+alldata['8'] = dict(nomor=8, nama="Grealish", posisi="sayap kanan")
+alldata['9'] = dict(nomor=7, nama="Jesus", posisi="penyerang tengah")
+alldata['10'] = dict(nomor=8, nama="Pep", posisi="pelatih")
 
 
 def versi():
