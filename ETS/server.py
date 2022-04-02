@@ -10,8 +10,9 @@ alldata['4'] = dict(nomor=4, nama="Laporte", posisi="bek tengah kanan")
 alldata['5'] = dict(nomor=5, nama="Cancelo", posisi="bek kanan")
 alldata['6'] = dict(nomor=6, nama="De Bruyne", posisi="gelandang serang tengah")
 alldata['7'] = dict(nomor=7, nama="Sterling", posisi="sayap kiri")
-alldata['8'] = dict(nomor=8, nama="Grealish", posisi="penyerang tengah")
-
+alldata['8'] = dict(nomor=8, nama="Grealish", posisi="sayap kanan")
+alldata['9'] = dict(nomor=7, nama="Jesus", posisi="penyerang tengah")
+alldata['10'] = dict(nomor=8, nama="Pep", posisi="pelatih")
 
 def versi():
     return "versi 0.0.1"
@@ -46,17 +47,17 @@ class Server:
             command = cstring[0].strip()
             if (command == 'getdatapemain'):
                 logging.warning("getdata")
-                nomorpemain = cstring[1].strip()
+                np = cstring[1].strip()
                 try:
-                    logging.warning(f"data {nomorpemain} ketemu")
-                    hasil = alldata[nomorpemain]
+                    logging.warning(f"data {np} ada")
+                    result = alldata[np]
                 except:
-                    hasil = None
+                    result = None
             elif (command == 'versi'):
-                hasil = versi()
+                result = versi()
         except:
-            hasil = None
-        return hasil
+            result = None
+        return result
 
     def serialisasi(self, a):
         # print(a)
@@ -81,12 +82,12 @@ class Server:
                     selesai = True
 
                 if (selesai):
-                    hasil = self.proses_request(data_received)
-                    logging.warning(f"hasil proses: {hasil}")
-                    print(f"hasil proses: {hasil}")
+                    result = self.proses_request(data_received)
+                    logging.warning(f"hasil proses: {result}")
+                    print(f"Keluaran proses: {result}")
 
-                    hasil = self.serialisasi(hasil)
-                    hasil += "\r\n\r\n"
+                    result = self.serialisasi(result)
+                    result += "\r\n\r\n"
                     connection.sendall(hasil.encode())
                     selesai = False
                     data_received = ""  # string
