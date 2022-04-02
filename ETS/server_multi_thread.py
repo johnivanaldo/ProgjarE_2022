@@ -24,22 +24,22 @@ def versi():
 
 def proses_request(request_string):
     cstring = request_string.split(" ")
-    hasil = None
+    result = None
     try:
         command = cstring[0].strip()
         if (command == 'getdatapemain'):
             logging.warning("getdata")
-            nomorpemain = cstring[1].strip()
+            np = cstring[1].strip()
             try:
-                logging.warning(f"data {nomorpemain} ketemu")
-                hasil = alldata[nomorpemain]
+                logging.warning(f"data {np} ketemu")
+                result = alldata[np]
             except:
-                hasil = None
+                result = None
         elif (command == 'versi'):
-            hasil = versi()
+            result = versi()
     except:
-        hasil = None
-    return hasil
+        result = None
+    return result
 
 
 def serialisasi(a):
@@ -108,13 +108,13 @@ def handle_request(server_address, connection):
                 selesai = True
 
             if (selesai):
-                hasil = proses_request(data_received)
-                logging.warning(f"hasil proses: {hasil}")
-                print(f"hasil proses: {hasil}")
+                result = proses_request(data_received)
+                logging.warning(f"hasil proses: {result}")
+                print(f"Keluaran proses: {result}")
 
-                hasil = serialisasi(hasil)
-                hasil += "\r\n\r\n"
-                connection.sendall(hasil.encode())
+                result = serialisasi(result)
+                result += "\r\n\r\n"
+                connection.sendall(result.encode())
                 selesai = False
                 data_received = ""  # string
                 break
