@@ -23,15 +23,11 @@ def versi():
 
 
 def proses_request(request_string):
-    # format request
-    # NAMACOMMAND spasi PARAMETER
     cstring = request_string.split(" ")
     hasil = None
     try:
         command = cstring[0].strip()
         if (command == 'getdatapemain'):
-            # getdata spasi parameter1
-            # parameter1 harus berupa nomor pemain
             logging.warning("getdata")
             nomorpemain = cstring[1].strip()
             try:
@@ -47,8 +43,6 @@ def proses_request(request_string):
 
 
 def serialisasi(a):
-    # print(a)
-    # serialized = str(dicttoxml.dicttoxml(a))
     serialized = json.dumps(a)
     logging.warning("serialized data")
     logging.warning(serialized)
