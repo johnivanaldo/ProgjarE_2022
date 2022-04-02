@@ -88,7 +88,7 @@ class Server:
 
                     result = self.serialisasi(result)
                     result += "\r\n\r\n"
-                    connection.sendall(hasil.encode())
+                    connection.sendall(result.encode())
                     selesai = False
                     data_received = ""  # string
                     break
