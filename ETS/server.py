@@ -42,7 +42,7 @@ class Server:
 
     def proses_request(self, request_string):
         cstring = request_string.split(" ")
-        hasil = None
+        result = None
         try:
             command = cstring[0].strip()
             if (command == 'getdatapemain'):
